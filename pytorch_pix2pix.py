@@ -30,7 +30,7 @@ print(opt)
 
 # results save path
 root = opt.dataset + '_' + opt.save_root + '/'
-model = opt.dataset + '_'
+model = os.path.basename(opt.dataset) + '_'
 if not os.path.isdir(root):
     os.mkdir(root)
 if not os.path.isdir(root + 'Fixed_results'):
@@ -150,7 +150,7 @@ for epoch in range(opt.train_epoch):
 
     print('[%d/%d] - ptime: %.2f, loss_d: %.3f, loss_g: %.3f' % ((epoch + 1), opt.train_epoch, per_epoch_ptime, torch.mean(torch.FloatTensor(D_losses)),
                                                               torch.mean(torch.FloatTensor(G_losses))))
-    fixed_p = 'Fixed_results/' + model + str(epoch + 1) + '.png'
+    fixed_p = root + 'Fixed_results/' + model + str(epoch + 1) + '.png'
     util.show_result(G, Variable(fixed_x_.cuda(), volatile=True), fixed_y_, (epoch+1), save=True, path=fixed_p)
     train_hist['per_epoch_ptimes'].append(per_epoch_ptime)
 
