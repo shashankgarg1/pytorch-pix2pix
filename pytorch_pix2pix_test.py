@@ -19,7 +19,7 @@ transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
 ])
-test_loader = util.data_load('data/' + opt.dataset, opt.test_subfolder, transform, batch_size=1, shuffle=False)
+test_loader = util.data_load(opt.dataset, opt.test_subfolder, transform, batch_size=1, shuffle=False)
 
 if not os.path.isdir(opt.dataset + '_results/test_results'):
     os.mkdir(opt.dataset + '_results/test_results')
