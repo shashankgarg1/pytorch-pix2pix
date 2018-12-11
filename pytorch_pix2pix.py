@@ -41,8 +41,8 @@ transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
 ])
-train_loader = util.data_load('data/' + opt.dataset, opt.train_subfolder, transform, opt.batch_size, shuffle=True)
-test_loader = util.data_load('data/' + opt.dataset, opt.test_subfolder, transform, opt.test_batch_size, shuffle=True)
+train_loader = util.data_load(opt.dataset, opt.train_subfolder, transform, opt.batch_size, shuffle=True)
+test_loader = util.data_load(opt.dataset, opt.test_subfolder, transform, opt.test_batch_size, shuffle=True)
 test = test_loader.__iter__().__next__()[0]
 img_size = test.size()[2]
 if opt.inverse_order:
