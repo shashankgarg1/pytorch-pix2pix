@@ -5,8 +5,8 @@ from torch.autograd import Variable
 import util
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', required=False, default='facades',  help='')
-parser.add_argument('--test_subfolder', required=False, default='val',  help='')
+parser.add_argument('--dataset', required=False, default='/content/gdrive/My Drive/CUHK',  help='')
+parser.add_argument('--test_subfolder', required=False, default='test',  help='')
 parser.add_argument('--ngf', type=int, default=64)
 parser.add_argument('--input_size', type=int, default=256, help='input size')
 parser.add_argument('--save_root', required=False, default='results', help='results save path')
