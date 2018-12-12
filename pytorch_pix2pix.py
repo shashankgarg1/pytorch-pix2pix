@@ -8,7 +8,7 @@ from torch.autograd import Variable
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=False, default='/content/gdrive/My Drive/CUHK',  help='')
 parser.add_argument('--train_subfolder', required=False, default='train',  help='')
-parser.add_argument('--test_subfolder', required=False, default='test',  help='')
+parser.add_argument('--test_subfolder', required=False, default='train',  help='')
 parser.add_argument('--batch_size', type=int, default=1, help='train batch size')
 parser.add_argument('--test_batch_size', type=int, default=5, help='test batch size')
 parser.add_argument('--ngf', type=int, default=64)
