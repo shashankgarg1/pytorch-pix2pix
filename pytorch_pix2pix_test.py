@@ -33,13 +33,20 @@ n = 0
 print('test start!')
 for x_, _ in test_loader:
     if opt.inverse_order:
-        y_ = x_[:, :, :, :x_.size()[2]]
-        x_ = x_[:, :, :, x_.size()[2]:]
-    else:
-        y_ = x_[:, :, :, x_.size()[2]:]
-        x_ = x_[:, :, :, :x_.size()[2]]
+        # y_ = x_[:, :, :, :x_.size()[2]]
+        # x_ = x_[:, :, :, x_.size()[2]:]
 
-    if x_.size()[2] != opt.input_size:
+        y_ = x_[:, :, :, :200]
+        x_ = x_[:, :, :, 200:]
+    else:
+        # y_ = x_[:, :, :, x_.size()[2]:]
+        # x_ = x_[:, :, :, :x_.size()[2]]
+
+        y_ = x_[:, :, :, 200:]
+        x_ = x_[:, :, :, :200]
+
+    # if x_.size()[2] != opt.input_size:
+    if 200 != opt.input_size:
         x_ = util.imgs_resize(x_, opt.input_size)
         y_ = util.imgs_resize(y_, opt.input_size)
 
